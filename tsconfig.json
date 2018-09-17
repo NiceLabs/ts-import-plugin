@@ -1,28 +1,12 @@
 {
   "compilerOptions": {
-    "target": "ES5",
-    "moduleResolution": "node",
-    "importHelpers": true,
-    "noEmitHelpers": true,
-    "allowSyntheticDefaultImports": true,
-    "checkJs": false,
+    "target": "esnext",
+    "module": "commonjs",
+    "strict": true,
+    "noImplicitAny": true,
     "declaration": true,
-    "jsx": "react",
-    "outDir": "lib",
     "sourceMap": true,
-    "skipLibCheck": true,
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "es5",
-      "es2015",
-      "es2016"
-    ]
+    "outDir": "./lib"
   },
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["test"]
 }

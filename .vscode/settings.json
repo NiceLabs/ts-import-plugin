@@ -1,0 +1,6 @@
+{
+  "editor.formatOnSave": true,
+  "tslint.autoFixOnSave": true,
+  "prettier.disableLanguages": ["typescript"],
+  "types-autoinstaller.saveAsDevDependency": true
+}

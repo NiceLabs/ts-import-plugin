@@ -1,7 +1,2 @@
-node_modules
-lib
-dist
-coverage
-.nyc_output
-.vscode
-*.log
+/node_modules/
+/lib/

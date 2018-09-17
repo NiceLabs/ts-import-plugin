@@ -1,89 +1,32 @@
 {
-  "name": "ts-import-plugin",
-  "version": "1.5.5",
+  "name": "@nice-labs/ts-import-plugin",
+  "version": "2.0.0",
   "description": "babel-plugin-import TypeScript version",
-  "main": "index.js",
-  "typings": "index.d.ts",
-  "scripts": {
-    "build": "rm -rf lib && tsc -p src/tsconfig.json",
-    "cover": "rm -rf ./coverage ./.nyc_output && nyc --reporter=html --reporter=lcov --exclude=node_modules --exclude=test mocha && nyc report",
-    "lint": "tslint -c ./tslint.json -p ./src/tsconfig.json",
-    "precommit": "lint-staged",
-    "prepare": "npm run build",
-    "start": "rm -rf dist && NODE_ENV=production webpack",
-    "test": "mocha",
-    "watch": "tsc -p ./src/tsconfig.json -w --diagnostics"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:Brooooooklyn/ts-import-plugin.git"
-  },
-  "keywords": [
-    "antd",
-    "TypeScript",
-    "plugin"
-  ],
-  "files": [
-    "index.d.ts",
-    "lib/"
-  ],
-  "author": "lynweklm@gmail.com",
+  "repository": "https://github.com/NiceLabs/ts-import-plugin",
   "license": "MIT",
+  "main": "./lib/index.js",
+  "scripts": {
+    "build": "del lib && tsc -p .",
+    "lint": "tslint -p .",
+    "test": "mocha -r ts-node/register tests/**/*",
+    "watch": "tsc -p . -w --diagnostics"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "typescript": ">=3.0.3"
+  },
   "devDependencies": {
     "@types/chai": "^4.1.4",
     "@types/lodash": "^4.14.116",
-    "@types/material-ui": "^0.21.5",
     "@types/mocha": "^5.2.5",
-    "@types/node": "^10.9.4",
-    "@types/react": "^16.4.14",
-    "@types/react-dom": "^16.0.7",
-    "antd": "^3.9.2",
+    "@types/node": "^10.10.0",
     "chai": "^4.1.2",
-    "coveralls": "^3.0.2",
-    "css-loader": "^1.0.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^7.2.2",
-    "lodash": "^4.17.10",
-    "material-ui": "^0.20.2",
-    "mini-css-extract-plugin": "^0.4.2",
+    "del-cli": "^1.1.0",
     "mocha": "^5.2.0",
-    "nyc": "^13.0.1",
-    "prettier": "^1.14.2",
-    "react": "^16.5.0",
-    "react-dom": "^16.5.0",
-    "rxjs": "^6.3.2",
-    "style-loader": "^0.23.0",
-    "ts-loader": "^5.1.0",
     "ts-node": "^7.0.1",
-    "tslint": "^5.11.0",
-    "tslint-eslint-rules": "^5.4.0",
-    "typescript": "^3.0.3",
-    "webpack": "^4.18.0",
-    "webpack-bundle-analyzer": "^3.0.0",
-    "webpack-cli": "^3.1.0"
+    "tslint": "^5.11.0"
   },
-  "dependencies": {
-    "tslib": "^1.9.3"
-  },
-  "standard": {
-    "globals": [
-      "describe",
-      "it"
-    ]
-  },
-  "prettier": {
-    "printWidth": 120,
-    "semi": false,
-    "trailingComma": "all",
-    "singleQuote": true,
-    "arrowParens": "always",
-    "parser": "typescript"
-  },
-  "lint-staged": {
-    "*.ts": [
-      "prettier --write",
-      "tslint -c tslint.json -p tsconfig.json --fix -e \"**/test/expect/**\"",
-      "git add"
-    ]
+  "engines": {
+    "node": ">= 10"
   }
 }
