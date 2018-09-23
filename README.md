@@ -72,12 +72,12 @@ export default configure;
 
 # ILibrary definition
 
-Reference: <src/types.ts>
+Reference: [src/types.ts](src/types.ts)
 
 # Compatible libraries
 
-Reference: <src/libraries.ts>
+Reference: [src/libraries.ts](src/libraries.ts)
 
 # License
 
-see <LICENSE>
+see [LICENSE](LICENSE)
