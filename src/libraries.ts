@@ -40,6 +40,7 @@ export default withLibraries({
     "material-ui": [
         { libraryName: "material-ui" },
         { libraryName: "@material-ui/core" },
+        { libraryName: "@material-ui/icons" },
     ],
     // REJECT ANTD-SERIES PREDEFINED SUPPORT.
     // #endregion
