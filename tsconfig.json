@@ -3,10 +3,16 @@
     "target": "esnext",
     "module": "commonjs",
     "strict": true,
+    "alwaysStrict": true,
     "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "declaration": true,
     "sourceMap": true,
     "outDir": "./lib"
   },
-  "exclude": ["test"]
+  "include": ["src"]
 }

@@ -1,7 +1,13 @@
 {
   "extends": "tslint:latest",
   "rules": {
+    "ordered-imports": {
+      "options": {
+        "grouped-imports": true
+      }
+    },
     "object-literal-sort-keys": false,
-    "no-implicit-dependencies": false
+    "no-implicit-dependencies": false,
+    "no-submodule-imports": false
   }
 }
