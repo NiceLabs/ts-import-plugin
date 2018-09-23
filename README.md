@@ -6,7 +6,7 @@ Modular import plugin for TypeScript.
 
 The library predefined supports:
 
-- functional library
+- Functional library
   - lodash
   - ramda
   - 1-liners
@@ -56,7 +56,14 @@ const configure: webpack.Configuration = {
               tsImportPluginFactory(
                 // predefined-names or ILibrary objects
                 "lodash",
-                "date-fns"
+                "date-fns",
+                {
+                  // ILibrary object
+                  libraryName: "antd",
+                  libraryPath: "lib",
+                  moduleName: "camelCase",
+                  appendPaths: path => `${path}/style/index.less`
+                }
               )
             ]
           })
