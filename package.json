@@ -8,6 +8,7 @@
   "scripts": {
     "build": "del lib && tsc -p .",
     "lint": "tslint -p .",
+    "prepublishOnly": "npm run build",
     "test": "cd test && npm start"
   },
   "dependencies": {
