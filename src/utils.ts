@@ -20,7 +20,9 @@ export class Library implements ILibrary {
     }
 
     public getModuleName(name: string) {
-        if (_.isNil(this.moduleName)) { return name; }
+        if (typeof this.moduleName === "function") {
+            return this.moduleName(name);
+        }
         if (this.moduleName === "camelCase") {
             return _.camelCase(name);
         }
@@ -33,27 +35,18 @@ export class Library implements ILibrary {
         if (this.moduleName === "pascalCase") {
             return _.upperFirst(_.camelCase(name));
         }
-        return this.moduleName(name);
+        return name;
     }
 
     public getFilePath(name: string) {
-        if (_.isNil(this.libraryPath)) {
-            return this.getModuleName(name);
+        if (typeof this.libraryPath === "function") {
+            return this.libraryPath(name);
         }
-        if (_.isString(this.libraryPath)) {
-            return path.posix.join(
-                this.libraryPath,
-                this.getModuleName(name),
-            );
-        }
-        return this.libraryPath(name);
+        return path.posix.join(this.libraryPath || "", this.getModuleName(name));
     }
 
     public getImportPath(name: string) {
-        return path.posix.join(
-            this.libraryName,
-            this.getFilePath(name),
-        );
+        return path.posix.join(this.libraryName, this.getFilePath(name));
     }
 
     public getAppendPaths(name: string) {
