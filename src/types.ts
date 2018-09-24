@@ -8,7 +8,7 @@ type ModuleNameCases =
     "camelCase" |
     "snakeCase" |
     "kebabCase" |
-    "startCase";
+    "pascalCase";
 
 export interface ILibrary {
     libraryName: string;

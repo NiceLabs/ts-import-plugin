@@ -30,8 +30,8 @@ export class Library implements ILibrary {
         if (this.moduleName === "snakeCase") {
             return _.snakeCase(name);
         }
-        if (this.moduleName === "startCase") {
-            return _.startCase(name).split(" ").join("");
+        if (this.moduleName === "pascalCase") {
+            return _.upperFirst(_.camelCase(name));
         }
         return this.moduleName(name);
     }
