@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/@nice-labs/ts-import-plugin.svg)](https://www.npmjs.com/package/@nice-labs/ts-import-plugin)
+[![npm version](https://badge.fury.io/js/%40nice-labs%2Fts-import-plugin.svg)](https://www.npmjs.com/package/@nice-labs/ts-import-plugin)
 
 # @nice-labs/ts-import-plugin
 
