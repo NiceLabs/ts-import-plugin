@@ -49,6 +49,7 @@ const configure: webpack.Configuration = {
     rules: [
       {
         test: /\.tsx?$/,
+        loader: require.resolve("ts-loader"),
         options: {
           compilerOptions: { module: "exnext" },
           getCustomTransformers: () => ({
