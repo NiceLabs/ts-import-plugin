@@ -64,7 +64,7 @@ const configure: webpack.Configuration = {
                   // ILibrary object
                   libraryName: "antd",
                   libraryPath: "lib",
-                  moduleName: "camelCase",
+                  moduleName: "kebabCase",
                   appendPaths: path => `${path}/style/index.less`
                 }
               )
@@ -87,6 +87,10 @@ Reference: [src/types.ts](src/types.ts)
 # Compatible libraries
 
 Reference: [src/libraries.ts](src/libraries.ts)
+
+# About antd & antd-mobile supports
+
+Reference: [test/test/antd.test.ts](test/test/antd.test.ts)
 
 # License
 
