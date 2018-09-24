@@ -1,6 +1,6 @@
 import { ILibrary } from "./types";
 
-const withLibraries = <T extends { [K in string]: ILibrary[] }>
+const withLibraries = <T extends { [K in keyof T]: ILibrary[] }>
     (definitions: T) => definitions;
 
 export default withLibraries({
