@@ -1,5 +1,3 @@
-import _ from "lodash";
-
 import { ILibrary } from "./types";
 
 const withLibraries = <T extends { [K in string]: ILibrary[] }>

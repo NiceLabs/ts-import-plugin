@@ -50,7 +50,7 @@ export class Library implements ILibrary {
     }
 
     public getAppendPaths(name: string) {
-        if (_.isUndefined(this.appendPaths)) { return []; }
+        if (!this.appendPaths) { return []; }
         return _.castArray(this.appendPaths(this.getImportPath(name)));
     }
 
