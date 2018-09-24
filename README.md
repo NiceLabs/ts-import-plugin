@@ -51,7 +51,9 @@ const configure: webpack.Configuration = {
         test: /\.tsx?$/,
         loader: require.resolve("ts-loader"),
         options: {
-          compilerOptions: { module: "exnext" },
+          compilerOptions: {
+            module: "esnext"
+          },
           getCustomTransformers: () => ({
             before: [
               tsImportPluginFactory(
