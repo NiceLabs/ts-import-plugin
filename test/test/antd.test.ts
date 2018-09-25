@@ -13,7 +13,7 @@ describe("should compile with antd", () => {
             // return [];
 
             // antd with css
-            // return `${importPath}/style/index.css`
+            // return `${importPath}/style/index.css`;
 
             // antd with less
             return `${importPath}/style/index.less`;
