@@ -41,7 +41,7 @@ _$chunk;
 
 ```typescript
 import webpack from "webpack";
-import tsImportPluginFactory from "ts-import-plugin";
+import tsImportPluginFactory from "@nice-labs/ts-import-plugin";
 
 const configure: webpack.Configuration = {
   // ...
