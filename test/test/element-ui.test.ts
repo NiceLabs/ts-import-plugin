@@ -13,7 +13,7 @@ describe("should compile with element-ui", () => {
         appendPaths: (importPath) => {
             const basePath = path.dirname(importPath);
             const fileName = path.basename(importPath);
-            return `${basePath}/theme-chalk/${fileName}.less`;
+            return `${basePath}/theme-chalk/${fileName}.css`;
         },
     });
 
@@ -23,9 +23,9 @@ describe("should compile with element-ui", () => {
         `;
         const output = dedent`
         import Button from "element-ui/lib/button";
-        import "element-ui/lib/theme-chalk/button.less";
+        import "element-ui/lib/theme-chalk/button.css";
         import ButtonGroup from "element-ui/lib/button-group";
-        import "element-ui/lib/theme-chalk/button-group.less";
+        import "element-ui/lib/theme-chalk/button-group.css";
         `;
         expect(compiler(input)).equal(output);
     });
