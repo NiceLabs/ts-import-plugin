@@ -4,25 +4,24 @@
     "start": "mocha -r ts-node/register test/**/*.test.ts"
   },
   "devDependencies": {
-    "@material-ui/core": "^3.1.1",
+    "@material-ui/core": "^3.1.2",
     "@material-ui/icons": "^3.0.1",
     "@types/antd": "^1.0.0",
-    "@types/chai": "^4.1.4",
+    "@types/chai": "^4.1.6",
     "@types/date-fns": "^2.6.0",
     "@types/lodash": "^4.14.116",
     "@types/mocha": "^5.2.5",
     "@types/ramda": "^0.25.38",
     "antd": "^3.9.3",
-    "chai": "^4.1.2",
+    "chai": "^4.2.0",
     "date-fns": "^1.29.0",
     "lodash": "^4.17.11",
     "mocha": "^5.2.0",
     "ramda": "^0.25.0",
-    "rxjs": "^6.3.2",
+    "rxjs": "^6.3.3",
     "ts-dedent": "^1.0.0",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
-    "typescript": "^3.0.3"
-  },
-  "dependencies": {}
+    "typescript": "^3.1.1"
+  }
 }

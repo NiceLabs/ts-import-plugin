@@ -5,19 +5,17 @@ import { makeCompiler } from "../src/utils";
 
 describe("should compile with antd", () => {
     const compiler = makeCompiler({
-        libraryName: "antd",
+        libraryName: "antd", // or antd-mobile
         libraryPath: "es",
         moduleName: "kebabCase",
-        appendPaths(importPath: string) {
-            // antd without style
-            // return [];
-
-            // antd with css
-            // return `${importPath}/style/index.css`;
-
-            // antd with less
-            return `${importPath}/style/index.less`;
-        },
+        // # antd-without-style
+        // appendPaths: undefined,
+        // # antd-with-css
+        // appendPaths: (importPath) => `${importPath}/style/index.css`,
+        // # antd-with-less
+        // appendPaths: (importPath) => `${importPath}/style/index.less`,
+        // # antd-with-style
+        appendPaths: (importPath) => `${importPath}/style`,
     });
 
     it("compile with named-imports", () => {
@@ -26,11 +24,11 @@ describe("should compile with antd", () => {
         `;
         const output = dedent`
         import Alert from "antd/es/alert";
-        import "antd/es/alert/style/index.less";
+        import "antd/es/alert/style";
         import C from "antd/es/card";
-        import "antd/es/card/style/index.less";
+        import "antd/es/card/style";
         import TreeSelect from "antd/es/tree-select";
-        import "antd/es/tree-select/style/index.less";
+        import "antd/es/tree-select/style";
         `;
         expect(compiler(input)).equal(output);
     });
