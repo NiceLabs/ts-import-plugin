@@ -13,6 +13,7 @@ export default withLibraries({
     "ramda": [
         { libraryName: "ramda", libraryPath: "es" },
         { libraryName: "ramda-adjunct", libraryPath: "es" },
+        { libraryName: "rambda", libraryPath: "lib" }
     ],
     "1-liners": [
         { libraryName: "1-liners", libraryPath: "module" },
