@@ -8,7 +8,6 @@ import { makeCompiler } from "../src/utils";
 describe("should compile with element-ui", () => {
     const compiler = makeCompiler({
         libraryName: "element-ui",
-        libraryPath: "lib",
         moduleName: "kebabCase",
         appendPaths: (importPath) => {
             const basePath = path.dirname(importPath);
