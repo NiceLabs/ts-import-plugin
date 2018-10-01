@@ -15,9 +15,6 @@ export default withLibraries({
         { libraryName: "ramda-adjunct" },
         { libraryName: "rambda", libraryPath: "lib" },
     ],
-    "1-liners": [
-        { libraryName: "1-liners", libraryPath: "module" },
-    ],
     "async": [
         { libraryName: "async" },
     ],

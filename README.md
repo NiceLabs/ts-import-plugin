@@ -9,7 +9,6 @@ The library predefined supports:
 - Functional library
   - lodash
   - ramda
-  - 1-liners
   - async
   - date-fns
   - rxjs@5
