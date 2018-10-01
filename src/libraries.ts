@@ -11,8 +11,8 @@ export default withLibraries({
         { libraryName: "lodash-decorators", moduleName: "camelCase" },
     ],
     "ramda": [
-        { libraryName: "ramda", libraryPath: "es" },
-        { libraryName: "ramda-adjunct", libraryPath: "es" },
+        { libraryName: "ramda" },
+        { libraryName: "ramda-adjunct" },
         { libraryName: "rambda", libraryPath: "lib" },
     ],
     "1-liners": [
@@ -34,7 +34,7 @@ export default withLibraries({
     // #endregion
     // #region ui framework
     "react-bootstrap": [
-        { libraryName: "react-bootstrap", libraryPath: "es" },
+        { libraryName: "react-bootstrap" },
     ],
     "material-ui": [
         { libraryName: "material-ui" },

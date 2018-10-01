@@ -1,3 +1,4 @@
+import fs from "fs";
 import _ from "lodash";
 import path from "path";
 
@@ -42,7 +43,10 @@ export class Library implements ILibrary {
         if (typeof this.libraryPath === "function") {
             return this.libraryPath(name);
         }
-        return path.posix.join(this.libraryPath || "", this.getModuleName(name));
+        return path.posix.join(
+            this.libraryPath || resolveLibraryPath(this.libraryName),
+            this.getModuleName(name),
+        );
     }
 
     public getImportPath(name: string) {
@@ -67,3 +71,19 @@ export const buildLibraries = (libraries: Array<PredefinedLibraryKeys | ILibrary
         return new Library(library);
     });
 };
+
+const resolveLibraryPath = _.memoize((libraryName: string): string => {
+    const packagePath = path.join(libraryName, "package.json");
+    const resolveOptions = { paths: [process.cwd()] };
+    try {
+        const resolvePath = require.resolve(packagePath, resolveOptions);
+        const pkg = JSON.parse(fs.readFileSync(resolvePath, { encoding: "utf-8" }));
+        const mainFile = pkg.module || pkg.main;
+        if (!mainFile) {
+            return "";
+        }
+        return path.dirname(mainFile);
+    } catch (e) {
+        return "";
+    }
+});
