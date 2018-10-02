@@ -73,7 +73,7 @@ export const buildLibraries = (libraries: Array<PredefinedLibraryKeys | ILibrary
 };
 
 const resolveLibraryPath = _.memoize((libraryName: string): string => {
-    const packagePath = path.join(libraryName, "package.json");
+    const packagePath = path.posix.join(libraryName, "package.json");
     const resolveOptions = { paths: [process.cwd()] };
     try {
         const resolvePath = require.resolve(packagePath, resolveOptions);
